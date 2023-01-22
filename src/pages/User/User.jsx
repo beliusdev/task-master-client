@@ -8,7 +8,6 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { setMessage, setTodos, setUser } from 'state';
 import getErrorMessage from 'utils/getErrorMessage';
 
-// todo: make the user info be in a card or look like a table or something
 function User() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
