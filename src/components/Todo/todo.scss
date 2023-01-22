@@ -1,0 +1,53 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  padding: 1rem 2rem;
+  cursor: default;
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: 3px;
+  transition: all 0.5s;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 300;
+    border-bottom: 1px solid;
+    width: fit-content;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  &--completed {
+    opacity: 0.4;
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: auto;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .button:last-child {
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: $bp-smaller) {
+    .button:last-child {
+      margin-right: 0;
+    }
+    
+    &__buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

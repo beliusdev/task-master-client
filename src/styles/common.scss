@@ -1,0 +1,23 @@
+$bp-largest: 1300px;
+$bp-larger: 1050px;
+$bp-medium: 750px;
+$bp-small: 650px;
+$bp-smaller: 450px;
+
+:export {
+  bpSmall: $bp-small;
+}
+
+.login,
+.register,
+.home,
+.create-todo,
+.user {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+  }
+}

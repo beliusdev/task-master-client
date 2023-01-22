@@ -1,0 +1,19 @@
+.logo {
+  text-decoration: none;
+  transition: all 0.4s;
+
+  h3 {
+    text-transform: uppercase;
+    color: transparent;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background-image: linear-gradient(to right, var(--color-primary), #000);
+    opacity: 0.8;
+    background-clip: text;
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.2);
+  }
+}

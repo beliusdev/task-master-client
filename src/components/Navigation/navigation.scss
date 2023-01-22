@@ -1,0 +1,128 @@
+.navigation {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-tertiary);
+    margin-bottom: 7rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style-type: none;
+  }
+
+  &__item {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    transition: all 0.4s;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  &__item:hover {
+    background-color: var(--color-background-on-hover);
+    transform: translateY(-4px) scale(1.03);
+    color: var(--color-secondary);
+  }
+
+  &__icon {
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-primary);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all 0.4s;
+    position: fixed;
+    right: 2.3rem;
+    top: 1.4rem;
+
+    &::before,
+    div,
+    &::after {
+      content: '';
+      background-color: var(--color-secondary);
+      width: 70%;
+      height: 3px;
+      border-radius: 10px;
+      transition: all 0.4s;
+      z-index: 2;
+    }
+
+    &::before,
+    &::after {
+      transform-origin: 50% 50%;
+    }
+
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    &--opened {
+      gap: 0;
+
+      div {
+        opacity: 0;
+      }
+
+      &::before {
+        transform: rotateY(230deg);
+      }
+
+      &::after {
+        transform: rotateY(-230deg);
+      }
+    }
+  }
+
+  .active {
+    background-color: var(--color-background-on-hover);
+  }
+
+  @media screen and (max-width: $bp-small) {
+    &__list {
+      gap: 1rem;
+      flex-direction: column;
+      position: fixed;
+      top: 5.6rem;
+      right: 1rem;
+      border-radius: 4px;
+      font-size: 1.3rem;
+      background-color: #f2f2f2;
+      transition: all 0.4s;
+      animation: menuAnimation 0.4s;
+    }
+
+    &__item {
+      padding: 0.6rem 1.2rem;
+    }
+
+    &__item:hover {
+      transform: none;
+    }
+  }
+}
+
+@keyframes menuAnimation {
+  0% {
+    transform: rotateY(90deg);
+  }
+
+  100% {
+    transform: rotateY(0);
+  }
+}
