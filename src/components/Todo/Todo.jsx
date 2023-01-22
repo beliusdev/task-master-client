@@ -21,6 +21,8 @@ function Todo({ todo }) {
   };
 
   const remove = async () => {
+    if (!window.confirm('Do you want to delete this task?')) return;
+
     try {
       const tasks = todos && todos.filter((t) => t._id !== todo._id);
       await TodoApi.deleteTodo(todo._id);
@@ -30,7 +32,6 @@ function Todo({ todo }) {
     }
   };
 
-  // todo: make a task require a confirmation before the deletion process
   return (
     <div className={`todo ${todo.isCompleted ? 'todo--completed' : ''}`}>
       <h4 className='todo__title'>{todo.title}</h4>

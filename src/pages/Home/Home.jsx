@@ -7,6 +7,7 @@ import { setTodos, setMessage } from 'state';
 import Todo from 'components/Todo/Todo';
 import Button from 'components/Button/Button';
 import getErrorMessage from 'utils/getErrorMessage';
+import introPageImage from '../../assets/intro-page-image.avif';
 
 function Home() {
   const dispatch = useDispatch();
@@ -33,26 +34,25 @@ function Home() {
             <div className='home__about'>
               <div className='home__info-box'>
                 <Heading type='small'>
-                  Some text here longer longer longer bit longer a little more
+                  Streamline your daily to-do's with Task Master - the ultimate
+                  task management tool
                 </Heading>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Quaerat, aliquam. Deserunt eius molestiae quisquam placeat,
-                  facere ratione eum consectetur, blanditiis quaerat, soluta
-                  facilis quia obcaecati nulla excepturi unde. Quo, labore?
+                  Welcome to our task management app! Here, you can easily
+                  create and complete tasks on a daily basis. Sign up or sign in
+                  to start organizing your day. Create tasks, mark them as
+                  complete, or delete them. With our app, you'll be able to stay
+                  on top of your to-do list and make the most of your day. Try
+                  it out now!
                 </p>
                 <Button to='/register'>Start Now &rarr;</Button>
               </div>
-              <img
-                className='home__image'
-                src='https://images.unsplash.com/photo-1513102419401-0cc6054c8127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-                alt='Goals'
-              />
+              <img className='home__image' src={introPageImage} alt='Goals' />
             </div>
           </>
         ) : todos ? (
           <>
-            <Heading type='secondary'>Todos</Heading>
+            <Heading type='secondary'>To-do's</Heading>
             <div className='todos'>
               <p className='todos__completed'>
                 {todos.filter((todo) => todo.isCompleted).length}/{todos.length}

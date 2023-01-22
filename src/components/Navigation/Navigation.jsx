@@ -34,7 +34,13 @@ function Navigation() {
   };
 
   const logoutComponent = (
-    <a className='navigation__item' onClick={handleLogout}>
+    <a
+      className='navigation__item'
+      onClick={() => {
+        handleLogout();
+        setIsMenuOpened(false);
+      }}
+    >
       Log Out
     </a>
   );

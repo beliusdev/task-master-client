@@ -32,7 +32,7 @@ function Login() {
   ) : (
     <div className='login'>
       <Container>
-        <Heading type='secondary'>Sign In</Heading>
+        <Heading type='secondary'>Log In</Heading>
         <Form onSubmit={handleSubmit}>
           <input
             tabIndex='1'

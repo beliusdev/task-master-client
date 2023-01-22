@@ -14,12 +14,12 @@ import CreateTodo from 'pages/CreateTodo/CreateTodo';
 import User from 'pages/User/User';
 import getErrorMessage from 'utils/getErrorMessage';
 import RouteController from 'components/RouteController/RouteController';
+import Message from 'components/Message/Message';
 
 function App() {
   const dispatch = useDispatch();
   const token = localStorage.getItem('tm-token');
   const user = useSelector((state) => state.user);
-  const message = useSelector((state) => state.message);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,37 +43,12 @@ function App() {
     }
   }, [user]);
 
-  useEffect(() => {
-    if (!message) return;
-    const timerId = setTimeout(() => {
-      dispatch(setMessage(''));
-    }, 5000);
-
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, [message, dispatch]);
-
-  // todo: change the message to a popup so it'll be visible on vertical screens like phones
-  // cause it is appearing on the top, but if the user has scrolled to the bottom of the page
-  // it'll be not visible
-
   return (
     <div className='app'>
       {!loading ? (
         <Router>
           <Navigation />
-          <Container>
-            {message && message instanceof Array ? (
-              message.map((msg) => (
-                <p key={msg} className='message'>
-                  {msg}
-                </p>
-              ))
-            ) : (
-              <p className='message'>{message}</p>
-            )}
-          </Container>
+          <Message />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route

@@ -48,7 +48,7 @@ function Register() {
   ) : (
     <div className='register'>
       <Container>
-        <Heading type='secondary'>Sign Up</Heading>
+        <Heading type='secondary'>Register</Heading>
         <Form onSubmit={handleSubmit}>
           <input
             type='text'
