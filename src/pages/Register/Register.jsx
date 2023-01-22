@@ -77,7 +77,7 @@ function Register() {
             onChange={(e) => handleChange(e, 'confirmPassword')}
             required
           />
-          {isPasswordsMatch ? null : <p>Passwords don't match.</p>}
+          {isPasswordsMatch ? null : <p className='message__item'>Passwords don't match.</p>}
           <button type='submit'>Sign Up</button>
           <p>
             Already have an account? <Link to='/login'>Sign In</Link>
