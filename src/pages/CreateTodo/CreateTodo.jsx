@@ -29,7 +29,7 @@ function CreateTodo() {
   return (
     <div className='create-todo'>
       <Container>
-        <Heading type='secondary'>Create Task</Heading>
+        <Heading type='secondary'>Create To-do</Heading>
         <Form onSubmit={handleSubmit}>
           <input
             type='text'

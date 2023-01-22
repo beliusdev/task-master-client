@@ -21,7 +21,7 @@ function Navigation() {
   const navigationItems = user.username
     ? {
         todos: '/',
-        'create todo': '/create-todo',
+        'create to-do': '/create-todo',
         [user.username]: '/user',
       }
     : { home: '/', login: '/login', register: '/register' };
