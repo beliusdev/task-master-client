@@ -80,9 +80,9 @@ function Register() {
           {isPasswordsMatch ? null : (
             <p className='message__item'>Passwords don't match.</p>
           )}
-          <button type='submit'>Sign Up</button>
+          <button type='submit'>Register</button>
           <p>
-            Already have an account? <Link to='/login'>Sign In</Link>
+            Already have an account? <Link to='/login'>Log In</Link>
           </p>
         </Form>
       </Container>

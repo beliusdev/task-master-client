@@ -49,10 +49,10 @@ function Login() {
             required
           />
           <button tabIndex='3' type='submit'>
-            Sign In
+            Log In
           </button>
           <p>
-            Don't have an account? <Link to='/register'>Sign Up</Link>
+            Don't have an account? <Link to='/register'>Register</Link>
           </p>
         </Form>
       </Container>
