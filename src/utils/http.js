@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const BASE_URL = 'https://task-master-server-task-master-server.up.railway.app';
+export const BASE_URL = 'https://task-master-server-87cn.onrender.com';
 
 export default function http(withToken) {
   const token = localStorage.getItem('tm-token');
