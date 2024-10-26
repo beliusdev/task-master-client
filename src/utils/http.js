@@ -1,5 +1,5 @@
 import axios from 'axios';
-export const BASE_URL = 'https://api.render.com/deploy/srv-cf6g6k1a6gdjkk4d2jl0?key=OeZJFq6khaY';
+export const BASE_URL = 'https://task-master-ephr.onrender.com';
 
 export default function http(withToken) {
   const token = localStorage.getItem('tm-token');
